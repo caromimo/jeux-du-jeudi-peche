@@ -1,0 +1,90 @@
+---
+title: "Les jeux du jeudi - Numéro 1"
+output: html_notebook
+---
+
+Le professeur Pascale Rigolet de l'université Paris-Sud nous propose un défi en biostatistiques à toutes les semaines sur [sa chaine YouTube](https://www.youtube.com/channel/UCww8jYELz4JmlkxT8FvNRAg/featured). Cette semaine, la [vidéo](https://www.youtube.com/watch?v=FgdwybC7tSg) porte sur des captures en pêche électrique en vue de recensement des poissons vivant dans une rivière. 
+
+### Le contexte et la question 
+Les poissons sont systématiquement comptés, mesurés et pesés. Un échantillon de peau est prélevé dans un tube à essai (étude génétique, mutations). Une prise de sang est effectuée sur certains individus. Technique No Kill: les poissons capturées sont relâchés vivant. 
+
+Dans ce contexte, essayez de définir un maximum de variables (au moins 3) et donnez-leur un nom. Proposez, pour chacune d'elles, son type, la loi de probabilité qu'elle serait susceptible de suivre ainsi que la représentation graphique la plus afaptée.
+
+#### (1) Définir un maximum de variables et leur donner un nom
+
+Détails relatif au site d'échantillonnage (nom de la variable): 
+
+* date de l'échantillonage (date)
+* heure de l'échantillonage (heure)
+* nom du site (site)
+* nom de la rivière (riviere)
+* coordonnée géographique - latitude (latitude)
+* coordonnée géographique - longitude (longitude)
+* profondeur moyenne du site (profondeur)
+* température de l'air (temp_air)
+* température de l'eau (temp_eau)
+* turbidité de l'eau (turbidite)
+
+Variables relatives à chaque poisson échantillonné (il est a noter que les unitées des variables pourraient aussi être sauvegardées dans un autre fichier pour utiliser des noms de variables plus courts):
+
+* numéro de l'échantillon (échantillon_numero)
+* nom latin de l'espèce (nom_latin)
+* nom common de l'espèce (nom_commun)
+* poids en grammes (poids_g)
+* longueur standard en cm (long_std_cm)
+* longueur à la fourche en cm (long_fourche_cm)
+* longueur totale en cm (long_totale_cm)
+* identification de l'échantillon de peau (échantillon_numero_peau)
+* prelèvement de sang - oui ou non (sang)
+* identification de l'échantillon de sang (échantillon_numero_sang)
+
+Comme certains laboratoires partagent les espaces d'entreposage d'échantillons, il pourrait aussi être important d'identifier l'emplacement où les échantillons seront entreposés, c'est-à-dire, l'édifice, le local, et le congélateur.
+
+Autre informations à noter par rapport aux particiant.e.s: 
+
+* noms des gens à la capture de poissons
+* noms des gens à l'identification des poissons
+* noms des gens à la collecte d'échantillons
+* noms des gens à la saisie de données
+
+Il est à noter que plusieurs autres variables devront être ajoutées lors des analyses en laboratoire pour les échantillons de peau, par exemple la séquence génétique, et de sang, par exemple, le niveau de glucose ou autre, dépendemment de l'intérêt des chercheur.e.s.
+
+#### (2) Définir le type de chaque variable
+
+Le professeur Rigolet nous propose une révision des types de variables dans cette [vidéo](https://www.youtube.com/watch?v=99jDA-hN3P8) d'où j'ai pris les quelques notes suivantes sur les quatre types de variables:
+
+1. Qualitative, nominale: variables que l'on peut qualifier, par exemple, la couleur ou la forme. Aucun calcul n'est possible sur ce type de variable. On s'intéresse alors à leur fréquence.
+2. Qualitative, ordinale: variables que l'on peut classer ou ordonner puisqu'elles ont une relation d'ordre, par exemple, des catégories de fréquence comme jamais, rarement, parfois, souvent et très souvent. Aucun calcul n'est possible sur ce type de variable. On s'intéresse alors à leur fréquence ou à leur médiane. Les variables ordinales peuvent être substituées par une échelle de Likert, par exemple, 1 pour jamais et 5 pour très souvent. Il n'est toutefois toujours pas possible de calculer des moyennes pour des variables sur une échelle de Likert. 
+3. Quantitative, discrète: variables que l'on peut compter, par exemple, un nombre de vélos ou de personnes. On peut alors s'intéresser à la probabilité d'avoir un certain nombre de choses dans une certaine condition.
+4. Quantitative, continue: variables que l'on peut mesurer, par exemple, le temps de vie d'une ampoules en heures. La précision de la mesure dépend de la fiabilité de l'instrument de mesure, et il y a alors potentiellement une infinité de valeurs continues pour ce type de variable. Les calculs possibles inclus la somme, moyenne, écart-type, etc.
+
+Les variables identifiées dans la section 1 peuvent alors être classées selon les quatres types de variables: 
+
+1. Qualitative nominale (qualifier): site, riviere, nom_latin, nom_commun, sang
+2. Qualitative ordinale (classer): date, heure, latitude, longitude, échantillon_numero, échantillon_numero_peau, échantillon_numero_sang
+3. Quantitative discrète (compter): lors de la synthèse de donnnées il y aura le nombre total de poissons capturés et le nombre pour lesquels des échantillons de sang auront été prélevés
+4. Quantitative continue (mesurer): profondeur, temp_air, temp_eau, turbidite, poids_g, long_std_cm, long_fourche_cm, long_totale_cm 
+
+#### (3) Définir la loi de probabilité  et la représentation graphique de chaque variable
+
+Les lois de probabilités et des représentations graphiques appropriées dépendent du types de variables. Le professeur Rigolet nous propose une révision de ces lois de probabilités et représentations graphiques dans cette [vidéo](https://www.youtube.com/watch?v=Ilx-kK5FEDQ) d'où j'ai pris les quelques notes suivantes:
+
+* variables qualitatives: nous utilisons des lois pour réaliser des tests
+  + nominales: 
+      - tests: test de chi-deux et tests non-paramétriques
+      - représentation graphique: le diagramme en secteurs
+  + ordinales: 
+      - tests: test de chi-deux et tests non-paramétriques par exemple test de Mann-Whitney et le test de Wilkinson
+      - représentation graphique: histogramme disjoint ou diagramme en secteurs
+
+* variables quantitatives: nous utilisons les lois pour représenter les modalités prises par les variables et nous pouvons alors réaliser des tests
+  + discrètes: 
+    - lois: on peut rencontrer la loi binomiale, ou la loi de Poisson (binomiale particulière qui gère les évenements rares), 
+    - tests: on peut utiliser un test utilisant la loi normale et tous les autres tests qui sont non-paramétrique, par exemple, le test de chi-deux.
+    - représentation graphique: le diagramme en bâtons
+  + continues:
+    - lois: on peut rencontrer la loi normale, ou loi de Student, ou loi de Fisher
+    - tests: on peut utiliser le test de Student (test de t), ou des tests sur des variances comme le test de Fisher et des tests non-paramétriques tels que  de Mann-Whitney et le test de Wilkinson
+    - représentation graphique: histogramme avec un histogramme à air jointe
+    
+Les lois de probabilités et des représentations graphiques appropriées pour chaque variable correspondent donc aux types de variables identifiées dans la section 2. 
