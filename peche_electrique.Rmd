@@ -3,7 +3,7 @@ title: "Les jeux du jeudi - Numéro 1"
 output: html_notebook
 ---
 
-Le professeur Pascale Rigolet de l'université Paris-Sud nous propose un défi en biostatistiques à toutes les semaines sur [sa chaine YouTube](https://www.youtube.com/channel/UCww8jYELz4JmlkxT8FvNRAg/featured). Cette semaine, la [vidéo](https://www.youtube.com/watch?v=FgdwybC7tSg) porte sur des captures en pêche électrique en vue de recensement des poissons vivant dans une rivière. 
+Le professeur Pascale Rigolet de l'université Paris-Sud nous propose un défi en biostatistiques à chaque semaine sur [sa chaîne YouTube](https://www.youtube.com/channel/UCww8jYELz4JmlkxT8FvNRAg/featured). Cette semaine, la [vidéo](https://www.youtube.com/watch?v=FgdwybC7tSg) porte sur des captures en pêche électrique en vue de recensement des poissons vivant dans une rivière. 
 
 ### Le contexte et la question 
 Les poissons sont systématiquement comptés, mesurés et pesés. Un échantillon de peau est prélevé dans un tube à essai (étude génétique, mutations). Une prise de sang est effectuée sur certains individus. Technique No Kill: les poissons capturées sont relâchés vivant. 
