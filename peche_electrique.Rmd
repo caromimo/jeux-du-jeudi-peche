@@ -1,6 +1,8 @@
 ---
 title: "Les jeux du jeudi - Numéro 1"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 Le professeur Pascal Rigolet de l'université Paris-Sud nous propose un défi en biostatistiques à chaque semaine sur [sa chaîne YouTube](https://www.youtube.com/channel/UCww8jYELz4JmlkxT8FvNRAg/featured). Cette semaine, la [vidéo](https://www.youtube.com/watch?v=FgdwybC7tSg) porte sur des captures en pêche électrique en vue de recensement des poissons vivant dans une rivière. 
